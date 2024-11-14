@@ -54,10 +54,12 @@ const Properties = () => {
 
   return (
     <>
-      <h2 className="text-3xl font-medium mb-4 text-gray-500 dark:text-gray-400">Properties</h2>
-      <FilterBox option={option} handleChange={handleOptionChange} />
+      <div className="w-full flex justify-between items-end pt-2 mb-4 flex-wrap">
+        <h2 className="text-3xl font-medium mb-4 text-gray-500 dark:text-gray-400">Properties</h2>
+        <FilterBox option={option} handleChange={handleOptionChange} />
+      </div>
       {isPending && <Spinner aria-label="loading..." />}
-      <div className="w-full grid grid-cols-4 gap-4 mb-2">
+      <div className="w-full grid sm:grid-cols-4 grid-cols-1 gap-4 mb-2">
         {properties && properties.map((property: Property) => 
           <PropertyCard key={property.id} property={property} />
         )}

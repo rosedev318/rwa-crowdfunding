@@ -25,8 +25,7 @@ const Dashboard = () => {
     <>
       <h2 className="text-3xl font-medium mb-4 text-gray-500 dark:text-gray-400">Featured Properties</h2>
       {isPending && <Spinner aria-label="loading..." />}
-      {/* <FilterBox /> */}
-      <div className="w-full grid grid-cols-4 gap-4 mb-2">
+      <div className="w-full grid sm:grid-cols-4 grid-cols-1 gap-4 mb-2">
         {properties && properties.map((property: Property) => 
           <PropertyCard key={property.id} property={property} />
         )}

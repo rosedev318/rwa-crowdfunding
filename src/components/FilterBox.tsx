@@ -20,7 +20,7 @@ export default function FilterBox({option, handleChange}: FilterBoxProps) {
   }
 
   return (
-    <div className="w-full flex justify-end gap-4">
+    <div className="flex gap-4">
       <FloatingLabel variant="outlined" label="Search By" name="search" value={option.search} onChange={handleInputChange} />
       <FloatingLabel variant="outlined" type="number" step={100} label="Max" name="min" value={option.min} onChange={handleInputChange} />
       <FloatingLabel variant="outlined" type="number" step={100} label="Min" name="max" value={option.max} onChange={handleInputChange} />
