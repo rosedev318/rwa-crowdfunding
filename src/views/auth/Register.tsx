@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const Register: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -81,7 +82,7 @@ const Register: React.FC = () => {
           </button>
         </form>
         <p className="mt-4 text-center text-sm text-gray-600">
-          Already have an account? <a href="/auth/login" className="text-blue-500 hover:underline">Login</a>
+          Already have an account? <Link href="/auth/login" className="text-blue-500 hover:underline">Login</Link>
         </p>
       </div>
     </div>

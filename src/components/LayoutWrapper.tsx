@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import Layout from './Layout';
 
-interface AuthWrapperProps {
+interface LayoutWrapperProps {
   children: React.ReactNode;
 }
 
-const AuthWrapper: React.FC<AuthWrapperProps> = ({ children }) => {
+const LayoutWrapper: React.FC<LayoutWrapperProps> = ({ children }) => {
   const { user } = useAuth();
   const router = useRouter();
   
@@ -35,4 +35,4 @@ const AuthWrapper: React.FC<AuthWrapperProps> = ({ children }) => {
   );
 };
 
-export default AuthWrapper;
+export default LayoutWrapper;

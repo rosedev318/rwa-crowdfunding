@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { User } from '@/store/types';
+import Link from 'next/link';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -68,7 +69,7 @@ const Login: React.FC = () => {
           </button>
         </form>
         <p className="mt-4 text-center text-sm text-gray-600">
-          Don't have an account? <a href="/auth/register" className="text-blue-500 hover:underline">Sign up</a>
+          Don't have an account? <Link href="/auth/register" className="text-blue-500 hover:underline">Sign up</Link>
         </p>
       </div>
     </div>
