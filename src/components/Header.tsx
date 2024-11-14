@@ -1,5 +1,3 @@
-"use client";
-
 import { useRouter } from 'next/router';
 import { Avatar, Dropdown, Navbar, DarkThemeToggle } from "flowbite-react";
 
