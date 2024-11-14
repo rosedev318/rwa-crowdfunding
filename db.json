@@ -75,5 +75,30 @@
       "username": "test"
     }
   ],
-  "investments": []
+  "investments": [
+    {
+      "id": "1",
+      "property_id": "5",
+      "user_id": "273e",
+      "amount": 125
+    },
+    {
+      "id": "2",
+      "property_id": "2",
+      "user_id": "273e",
+      "amount": 75
+    },
+    {
+      "id": "3",
+      "property_id": "2",
+      "user_id": "a306",
+      "amount": 1200
+    },
+    {
+      "id": "4",
+      "property_id": "7",
+      "user_id": "273e",
+      "amount": 250
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import Properties from "@/views/Properties";
+import Properties from "@/views/properties/Properties";
 
 const PropertiesPage = () => {
   return (
