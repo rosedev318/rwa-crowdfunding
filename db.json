@@ -1,0 +1,29 @@
+{
+  "properties": [
+    {
+      "id": "1",
+      "title": "Luxury Apartment",
+      "description": "A beautiful apartment in the city center."
+    },
+    {
+      "id": "2",
+      "title": "Beach House",
+      "description": "A lovely beach house with ocean views."
+    }
+  ],
+  "users": [
+    {
+      "id": "273e",
+      "email": "admin@gmail.com",
+      "password": "password",
+      "username": "athos"
+    },
+    {
+      "id": "a306",
+      "email": "test@gmail.com",
+      "password": "password",
+      "username": "test"
+    }
+  ],
+  "investments": []
+}
