@@ -3,6 +3,7 @@ export interface User {
   email: string;
   username: string;
   password: string;
+  invests?: Investment[];
 }
 
 export interface Property {

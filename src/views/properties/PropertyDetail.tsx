@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 
 import { Property, Investment } from "@/store/types";
 import Link from 'next/link';
+import Image from 'next/image';
 
 const fetchProperty = async (id: string) => {
   const response = await fetch(`/api/properties/${id}`);
@@ -43,11 +44,11 @@ const Properties = () => {
                 <li key={invest.id} className="py-3 sm:py-4">
                   <div className="flex items-center space-x-4">
                     <div className="shrink-0">
-                      <img
+                      <Image
                         alt={invest.investor?.username as string}
                         height="32"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                         width="32"
+                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                         className="rounded-full"
                       />
                     </div>

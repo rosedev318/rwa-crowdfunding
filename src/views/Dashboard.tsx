@@ -1,35 +1,15 @@
 "use client";
 
-import { useQuery } from '@tanstack/react-query';
-import { Spinner } from "flowbite-react";
-
-import PropertyCard from "@/components/PropertyCard";
-import { Property } from "@/store/types";
-
-const fetchFeaturedProperties = async () => {
-  const response = await fetch('/api/featured-properties');
-  if (!response.ok) {
-    throw new Error('Failed to fetch properties');
-  }
-  return response.json();
-};
+import InvestsTable from '@/components/InvestsTable';
+import { useAuth } from '@/hooks/useAuth';
 
 const Dashboard = () => {
-  const { data, isPending } = useQuery({
-    queryKey: ["properties"],
-    queryFn: fetchFeaturedProperties,
-  });
-  const properties = data?.properties;
+  const { user } = useAuth();
 
   return (
     <>
-      <h2 className="text-3xl font-medium mb-4 text-gray-500 dark:text-gray-400">Featured Properties</h2>
-      {isPending && <Spinner aria-label="loading..." />}
-      <div className="w-full grid sm:grid-cols-4 grid-cols-1 gap-4 mb-2">
-        {properties && properties.map((property: Property) => 
-          <PropertyCard key={property.id} property={property} />
-        )}
-      </div>
+      <h2 className="text-3xl font-medium mb-4 text-gray-500 dark:text-gray-400">Your Investment List</h2>
+      <InvestsTable invests={user?.invests || []} />
     </>
   );
 };

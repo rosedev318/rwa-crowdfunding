@@ -1,8 +1,8 @@
-import Dashboard from "@/views/Dashboard";
+import Home from "@/views/Home";
 
 const HomePage = () => {
   return (
-    <Dashboard />
+    <Home />
   );
 };
 

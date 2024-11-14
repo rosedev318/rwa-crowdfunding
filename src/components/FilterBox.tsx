@@ -1,4 +1,4 @@
-import { Button, FloatingLabel, RangeSlider } from "flowbite-react";
+import { FloatingLabel } from "flowbite-react";
 
 export interface FilterOption {
   search: string;

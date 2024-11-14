@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { Avatar, Dropdown, Navbar, DarkThemeToggle } from "flowbite-react";
 
 import { useAuth } from "@/hooks/useAuth";
+import Image from 'next/image';
 
 interface NavigationItem {
   name: string;
@@ -9,9 +10,9 @@ interface NavigationItem {
 }
 
 const navigation: NavigationItem[] = [
-  { name: 'Dashboard', href: '/' },
+  { name: 'Home', href: '/' },
+  { name: 'Dashboard', href: '/dashboard' },
   { name: 'Properties', href: '/properties' },
-  { name: 'Governance', href: '/governance' },
 ];
 
 const Header = () => {
@@ -21,7 +22,13 @@ const Header = () => {
   return (
     <Navbar className='border-b'>
       <Navbar.Brand href="/">
-        <img src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
+        <Image
+          width={42}
+          height={36}
+          src="/mark.svg"
+          className="mr-3 h-6 sm:h-9"
+          alt="Flowbite React Logo"
+        />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">RWA Crowdfunding</span>
       </Navbar.Brand>
       <div className="flex gap-4 md:order-2">

@@ -8,7 +8,7 @@ import { Property } from "@/store/types";
 import FilterBox, { FilterOption } from '@/components/FilterBox';
 import { useEffect, useState } from 'react';
 
-const fetchProperties = async () => {
+export const fetchProperties = async () => {
   const response = await fetch('/api/properties');
   if (!response.ok) {
     throw new Error('Failed to fetch properties');
@@ -23,7 +23,7 @@ const initOption: FilterOption = {
 }
 
 const Properties = () => {
-  let [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
   const [option, setOption] = useState<FilterOption>(initOption);
   const [properties, setProperties] = useState<Property[]>([]);

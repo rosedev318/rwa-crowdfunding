@@ -67,7 +67,7 @@
       "id": "10",
       "title": "Historic Mansion",
       "description": "A beautifully restored mansion with rich history.",
-      "total_fund": 15000,
+      "total_fund": 1500,
       "featured": false
     }
   ],
@@ -109,6 +109,12 @@
       "property_id": "7",
       "user_id": "273e",
       "amount": 250
+    },
+    {
+      "id": "f6a3",
+      "property_id": "9",
+      "user_id": "273e",
+      "amount": "300"
     }
   ]
 }
