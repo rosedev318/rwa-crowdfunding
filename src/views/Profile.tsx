@@ -5,14 +5,14 @@ import { Button, Label, TextInput } from "flowbite-react";
 
 import { useAuth } from "@/hooks/useAuth";
 import { User } from "@/store/types";
-import { toastStore } from "@/store";
+import { useToastStore } from "@/store";
 
 const Profile = () => {
   const [form, setForm] = useState<User | null>(null);
   const [error, setError] = useState('');
 
   const { user, login } = useAuth();
-  const { fireToast } = toastStore();
+  const { fireToast } = useToastStore();
 
   useEffect(() => {
     if (user) {

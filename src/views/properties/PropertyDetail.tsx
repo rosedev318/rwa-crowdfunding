@@ -34,7 +34,7 @@ const Properties = () => {
         <>
           <div className="w-full flex justify-between items-center">
             <h2 className="text-3xl font-medium mb-4 text-gray-500 dark:text-gray-400">{property.title} (${property.total_fund})</h2>
-            <Link href={`/investments/${property.id}`}><Button>Invest</Button></Link>
+            <Link href={`/investments/${property.id}`}><Button>Invest Now</Button></Link>
           </div>
           <p className="text-gray-700 dark:text-gray-400">{property.description}</p>
           <div className="flow-root">

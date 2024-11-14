@@ -10,6 +10,7 @@ export interface Property {
   title: string;
   description: string;
   total_fund: number;
+  featured: boolean;
   invests?: Investment[];
 }
 

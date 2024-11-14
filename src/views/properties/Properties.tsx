@@ -5,6 +5,8 @@ import { Spinner } from "flowbite-react";
 
 import PropertyCard from "@/components/PropertyCard";
 import { Property } from "@/store/types";
+import FilterBox, { FilterOption } from '@/components/FilterBox';
+import { useEffect, useState } from 'react';
 
 const fetchProperties = async () => {
   const response = await fetch('/api/properties');
@@ -14,16 +16,46 @@ const fetchProperties = async () => {
   return response.json();
 };
 
+const initOption: FilterOption = {
+  search: '',
+  min: 0,
+  max: 10000
+}
+
 const Properties = () => {
+  let [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+
+  const [option, setOption] = useState<FilterOption>(initOption);
+  const [properties, setProperties] = useState<Property[]>([]);
   const { data, isPending } = useQuery({
     queryKey: ["properties"],
     queryFn: fetchProperties,
   });
-  const properties = data?.properties;
+  
+  useEffect(() => {
+    if (data?.properties.length > 0) {
+      setProperties(data?.properties);
+    }
+  }, [data?.properties]);
+
+  const handleOptionChange = (opt: FilterOption) => {
+    setOption(opt);
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    const timerId = setTimeout(() => {
+      setProperties(data?.properties.filter((property: Property) => {
+        return property.title.toLowerCase().includes(opt.search.toLowerCase()) && property.total_fund >= opt.min && property.total_fund <= opt.max
+      }))
+    }, 300);
+
+    setTimeoutId(timerId);
+  }
 
   return (
     <>
       <h2 className="text-3xl font-medium mb-4 text-gray-500 dark:text-gray-400">Properties</h2>
+      <FilterBox option={option} handleChange={handleOptionChange} />
       {isPending && <Spinner aria-label="loading..." />}
       <div className="w-full grid grid-cols-4 gap-4 mb-2">
         {properties && properties.map((property: Property) => 
