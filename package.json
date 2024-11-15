@@ -7,11 +7,13 @@
     "build": "next build",
     "start": "next start",
     "start:mock": "json-server --watch db.json --port 3001",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev:mock": "npm run dev & npm run start:mock"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.59.20",
     "flowbite-react": "^0.10.2",
+    "json-server": "^1.0.0-beta.3",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
