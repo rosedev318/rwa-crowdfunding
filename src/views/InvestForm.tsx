@@ -58,6 +58,7 @@ const InvestForm = () => {
     if (res.ok) {
       fireToast('success', 'Investment created successfully!');
       setError('');
+      router.push('/dashboard');
     } else {
       const data = await res.json();
       setError(data.message);
